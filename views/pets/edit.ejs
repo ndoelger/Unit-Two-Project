@@ -1,13 +1,44 @@
 <%- include("../partials/header") %>
 
 <form action="/pets/<%= pet.id %>/?_method=PUT" method="POST">
-    <label>Image: <input type="text" name="image" ></label><br>
-    <label>Name: <input type="text" name="name" value="<%= pet.name %>" ></label><br>
-    <label>Type: <input type="text" name="type" value="<%=pet.type%>" ></label><br>
-    <label>Breed: <input type="text" name="breed" value="<%=pet.breed%>"></label><br>
-    <label>Age: <input type="number" name="age" value="<%=pet.age%>"></label><br>
-    <label>Birthday: <input type="date" name="birthday" value="<%=pet.birthday%>"></label><br>
-    <button type="submit">Edit Pet</button>
-</form>
+    <table class = "form" border="none">
+ <tr>
+     <td align="right">Image:</td>
+     <td align="left" ><input type="text" name="image" value= "<%=pet.image %>" ></td>
+ </tr>
+ <tr>
+     <td align="right">Name:</td>
+     <td align="left" ><input type="text" name="name" value="<%= pet.name %>" ></td>
+ </tr>
+ <tr>
+     <td align="right">Type:</td>
+     <td align="left" >
+         <select name="type">
+             <option value="Dog" <%= pet.type === "Dog" ? "selected" : "" %>>Dog</option>
+             <option value="Cat" <%= pet.type === "Cat" ? "selected" : "" %>>Cat</option>
+         </select>
+     </td>
+ </tr>
+ <tr>
+     <td align="right">Breed:</td>
+     <td align="left" ><input type="text" name="breed" value="<%= pet.breed %>"></td>
+ </tr>
+ <tr>
+     <td align="right">Age:</td>
+     <td align="left" ><input type="number" name="age" value="<%= pet.age %>" ></td>
+ </tr>
+ <tr>
+    <% const dateStr = pet.birthday %>
+    <% const date = new Date(dateStr) %>
+     <td align="right">Birthday:</td>
+     <td align="left" ><input type="date" name="birthday" value="<%= date.getFullYear() + "-" + (date.getMonth() + 1).toString().padStart(2, "0") + "-" + (date.getDate()+1).toString().padStart(2, "0") %>"></td>
+ </tr>
+ <tr>
+     <td></td>
+     <td align="left" >
+         <button type="submit">Save Pet</button>
+     </td>
+ </tr>
+ </form>
 
-<%- include("../partials/footer") %>
+ <%- include("../partials/footer") %>

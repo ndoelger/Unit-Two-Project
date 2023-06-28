@@ -1,17 +1,64 @@
+@font-face {
+  font-family: goodBoy;
+  src: url(../../fonts/GoodBoy-ZVJrl.ttf);
+}
+
+
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/frame-with-dogs-vector-white-background_53876-127700\ copy\ 2.jpg");
+  background-position: top;
+  background-size: cover;
 }
 
 a {
   color: #00b7ff;
 }
 
-table,
-td {
-  border: 1px solid black;
+table {
+  margin: auto;
+
 }
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; 
+  font-size: 30px;}
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
 
 .buttons {
   display: inline;
+}
+
+nav {
+  margin-bottom:10px;
+  padding-top:10px;
+  font-size: 20px;
+}
+
+body {
+  text-align: center;
+}
+
+table.form,
+.form td,
+.form tr {
+  border: none;
+  padding: 0;
+  width: 0%;
+  padding-right: 2px;
+  padding-bottom: 5px;
+
+}
+
+img {
+  width: 30%
 }
