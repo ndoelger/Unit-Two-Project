@@ -13,16 +13,31 @@
  <tr>
      <td align="right">Type:</td>
      <td align="left" >
-         <select name="type">
+         <select name="type" id="type">
              <option value="Dog" <%= pet.type === "Dog" ? "selected" : "" %>>Dog</option>
              <option value="Cat" <%= pet.type === "Cat" ? "selected" : "" %>>Cat</option>
          </select>
      </td>
  </tr>
  <tr>
-     <td align="right">Breed:</td>
-     <td align="left" ><input type="text" name="breed" value="<%= pet.breed %>"></td>
- </tr>
+    <td align="right">Breed:</td>
+    <td align="left"><select name="breed" id="breed">
+    <% if(pet.type === "Dog") { %>
+        <option value="German Shepherd" <%= pet.breed === "German Shepherd" ? "selected" : "" %>>German Shepherd</option>
+        <option value="Bulldog" <%= pet.breed === "Bulldog" ? "selected" : "" %>>Bulldog</option>
+        <option value="Labrador" <%= pet.breed === "Labrador" ? "selected" : "" %>>Labrador</option>
+        <option value="Husky" <%= pet.breed === "Husky" ? "selected" : "" %>>Husky</option>
+        <option value="Poodle" <%= pet.breed === "Poodle" ? "selected" : "" %>>Poodle</option>
+        <option value="Chiuahua" <%= pet.breed === "Poodle" ? "selected" : "" %>>Poodle</option>
+    <% } else if(pet.type === "Cat") {%>
+        <option value="Siamese" <%= pet.breed === "Siamese" ? "selected" : "" %>>Siamese</option>
+        <option value="British Shorthair" <%= pet.breed === "British Shorthair" ? "selected" : "" %>>British Shorthair</option>
+        <option value="Maine Coon" <%= pet.breed === "Maine Coon" ? "selected" : "" %>>Maine Coon</option>
+        <option value="Persian" <%= pet.breed === "Persian" ? "selected" : "" %>>Persian</option>
+        <option value="Sphynx" <%= pet.breed === "Sphynx" ? "selected" : "" %>>Sphynx</option>
+        <% } %>
+    </select></td>
+  </tr>
  <tr>
      <td align="right">Age:</td>
      <td align="left" ><input type="number" name="age" value="<%= pet.age %>" ></td>
